@@ -1,0 +1,27 @@
+{% macro render_input(name, placeholder, type='text') %}
+<div class="control-group">
+  <label for="{{name}}" class="control-label">{{placeholder}}</label>
+  <div class="controls">
+    <input type="{{type}}" name="{{name}}" placeholder="{{placeholder}}" />
+  </div>
+</div>
+{% endmacro %}
+
+{% macro render_field(field) %}
+<div class="control-group">
+  <div class="controls">
+    <label for="{{field.name}}" class="control-label">
+      {{field.label}} - {{field(**kwargs)|safe}}
+    </label>
+  </div>
+</div>
+{% endmacro %}
+
+{%macro render_inputs(numero)%}
+<div class="control-group">
+  <div class="controls">
+    <label for="numero{{numero+1}}" class="control-label">Número {{numero+1}}:  </label>
+    <input type="number", name="numero{{numero+1}}">  
+  </div>
+</div>
+{%endmacro%}
