@@ -1,0 +1,6 @@
+
+{% macro generar_input(num) %}
+<label for="input{{ num+1}}">Input {{ num+1 }}:</label>
+<input type="number" id="input{{ num }}" name="input{{ num+1 }}"><br>
+{% endmacro %}
+

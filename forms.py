@@ -9,3 +9,8 @@ class UserForm(Form):
   nombre=StringField('nombre')
   apaterno=StringField('apaterno')
   email=EmailField('correo')
+
+
+class numForm(Form):
+    numero=StringField('numero')
+    num_inputs = IntegerField('Número de campos')

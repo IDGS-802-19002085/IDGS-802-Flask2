@@ -1,0 +1,36 @@
+
+{% block content %}
+<h1>Crear inputs</h1>
+<form method="POST" action="/forma">
+    <label for="num_inputs">Número de inputs:</label>
+    <input type="number" id="num_inputs" name="num_inputs">
+    <input type="submit" value="Generar">
+</form>
+
+<hr>
+{% if num_inputs %}
+    {% from 'generar_input.html' import generar_input %}
+    <form action="/operas" method="post">
+        
+        {% if showForm %}
+            {% for n in range(num_inputs) %}
+            {{generar_input(n)}}
+            {% endfor %}
+        <button type="submit">Calcular</button>
+        {% endif %}
+    </form>
+{% endif %}
+
+<!-- {% from 'generar_input.html' import generar_input %}
+    <form action="/calcular" method="post">
+            <h2>Inputs generados:</h2>
+            {% if showForm %}
+                <h1>Si soy</h1>
+                    {% for i in range(1, num_inputs ) %}
+                    {{ generar_input(num_inputs) }}   
+                    {{ generar_input(i) }}
+                    {% endfor %} 
+            {% endif %}
+    </form> -->
+{% endblock %}
+
