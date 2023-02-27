@@ -2,9 +2,8 @@
 
 
 {% block content %}
-<h1>Crear inputs</h1>
+<h1>Ingresa numero de inputs</h1>
 <form method="POST" action="/forma">
-    <label for="num_inputs">Número de inputs:</label>
     <input type="number" id="num_inputs" name="num_inputs">
     <input type="submit" value="Generar">
 </form>
@@ -12,9 +11,8 @@
 <hr>
 {% if num_inputs %}
     {% from 'generar_input.html' import generar_input %}
-    <form action="/operas" method="post">
-        
-        {% if showForm %}
+    <form action="/operas" method="post">   
+        {% if VerFormulario %}
             {% for n in range(num_inputs) %}
             {{generar_input(n)}}
             {% endfor %}

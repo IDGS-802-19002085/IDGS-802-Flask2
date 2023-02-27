@@ -8,7 +8,7 @@ from wtforms.validators import DataRequired
 
 class UserForm(Form):
   matricula=StringField('matricula', [validators.DataRequired(message='La matricula es obligatoria.')])
-  nombre=StringField('nombre')
+  nombre=StringField('nombre', [validators.DataRequired(message='el campo es requerido')])
   apaterno=StringField('apaterno')
   email=EmailField('correo')
 
