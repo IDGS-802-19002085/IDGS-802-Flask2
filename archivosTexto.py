@@ -1,8 +1,6 @@
 f=open('Alumnos.txt','r')
 # nombres=f.read()
 # print(nombres)
-
-
 nombres2=f.readlines()
 print(nombres2)
 f.close()
@@ -21,6 +19,10 @@ f.write('\n'+'Mario')
 f.write('\n'+'Pedro')
 for items in alumno:
     f.write('\n'+alumno[items])
-f.close()
-    
+    f.close()
+
+
+
+
+
 

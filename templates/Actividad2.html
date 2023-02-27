@@ -1,0 +1,109 @@
+{% extends "layout2.html"%}
+
+
+{% block content %}
+
+
+
+<h1>Traductor</h1>
+<form method="POST" action="/consultar">
+    <div class="form-group">  
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="word">Palabra a traducir:</label>
+                    <input type="text" name="pingles" id="pingles">
+                    <label for="radio1"><input type="radio" id="palabra" name="palabra" value="espanol"> Español</label>
+                    <label for="radio1"><input type="radio" id="palabra" name="palabra" value="ingles"> Ingles </label> 
+                    <button type="submit">Traducir</button> 
+                </div>
+                <div class="col-md-6"> 
+                    <label for="word">Resultado:</label>
+                    <input type="text" id="output-text" name="translation" value="{{ translation }}" disabled> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
+<br><br>
+
+<h1>Guardar palabras</h1>
+<form method="POST" action="/guardars">
+        <div class="form-group">
+            <label for="input-text">Palabra en español:</label>
+            <input type="text" id="base" name="base">
+        </div>
+        <div class="form-group ">
+            <label for="output-text">Palabra en ingles:</label>
+            <input type="text" id="basen" name="basen">
+        </div>
+        <button type="submit">Guardar</button>  
+    </div>
+
+
+</form>
+
+
+
+
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+</style>
+{% endblock %}
+
+
+
