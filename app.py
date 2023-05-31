@@ -21,12 +21,8 @@ def cookies():
         passw=reg_user.password.data
         datos=user+'@'+passw
         response.set_cookies('datos_user', datos)
-
-
     response=make_response(render_template('cookies.html',form=reg_user))
     return render_template('cookies.html', form=reg_user)
-
-
 
 @app.route('/formulario2', methods=["GET"])
 def formulario2():
