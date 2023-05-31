@@ -77,11 +77,13 @@ def operas():
                         )
 
 @app.route('/traducir', methods=['GET'])
+
 def traducir():
     valor_input = ""
     # valor_input= request.form.get('pingles')
     valor_input = request.args.get('pingles')
     return render_template('resultado.html', valor_input=valor_input)
+
 
     return render_template("traductor.html")
 
@@ -125,12 +127,6 @@ def consultar():
         #             #palabra = linea.split("=")[0].strip() 
         #             #translation.append(palabra)
             return render_template('Actividad2.html', translation=translation)
-
-
-
-
-
-
 @app.route('/guardars', methods=['GET', 'POST'])
 def guardars():
     datos = {}
